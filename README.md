@@ -1,2 +1,2 @@
-# docker-bundler
-Docker container with common tools to develop rails applications.
+# docker-dev-base-ruby
+A dockerized ruby development environment.
