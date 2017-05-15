@@ -18,6 +18,6 @@ echo "looking for user"
 cut -d':' -f 3 /etc/passwd | grep -q "^$USER_UID$"
 if [ $? -ne 0 ]; then
   echo "creating user"
-  adduser --home $APP_HOME --shell /bin/bash --uid $USER_UID --gid $USER_GID $USER_NAME
+  adduser --home $USER_HOME --shell /bin/bash --uid $USER_UID --gid $USER_GID $USER_NAME
 fi
-chown -R $USER_UID:$USER_GID $APP_HOME
+chown -R $USER_UID:$USER_GID $USER_HOME
