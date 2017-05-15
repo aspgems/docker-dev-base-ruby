@@ -9,20 +9,19 @@ RUN apt-get update && \
     libxml2-dev \
     libxslt-dev \
     ssh \
+    git \
   && rm -rf /var/lib/apt/lists*
 
 
 ENV LANG=C.UTF-8
 
-ARG USER_NAME=dev
-ARG USER_UID=1000
-ARG USER_GID=1000
+ENV USER_NAME dev
+ENV APP_HOME=/home/$USER_NAME
 
-ENV APP_HOME=/home/${USER_NAME}
-
-ENV GEM_HOME=${APP_HOME}/vendor/bundle
+ENV GEM_HOME=$APP_HOME/vendor/bundle
 ENV BUNDLE_PATH $GEM_HOME
 ENV BUNDLE_BIN $BUNDLE_PATH/bin
+ENV BUNDLE_APP_CONFIG $APP_HOME/.bundle
 ENV PATH $BUNDLE_BIN:$PATH
 
 RUN mkdir /root/.ssh && echo "StrictHostKeyChecking no" > /root/.ssh/config
@@ -30,9 +29,6 @@ RUN mkdir /root/.ssh && echo "StrictHostKeyChecking no" > /root/.ssh/config
 COPY setup_user.sh /bin/setup_user.sh
 RUN chmod +x /bin/setup_user.sh
 
-RUN /bin/setup_user.sh
-USER ${USER_NAME}
-
 WORKDIR /${APP_HOME}
 
-CMD ["bash"]
+CMD ["echo", "Dev environment set up"]
