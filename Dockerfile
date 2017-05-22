@@ -15,7 +15,7 @@ RUN apt-get update && \
 
 ENV LANG=C.UTF-8
 
-ENV USER_NAME dev
+VAR USER_NAME developer
 ENV USER_HOME /home/$USER_NAME
 ENV APP_HOME=$USER_HOME/app
 
