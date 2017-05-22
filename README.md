@@ -20,4 +20,4 @@ docker build --build-arg USER_UID=$(id -u) --build-arg USER_GID=$(id -g) .
 
 To start the application there is two mounting points:
 - /home/developer/app to mount with the actual application
-- /tmp/agent.sock to mount our ssh_agent usually exported as SSH_AUTH_SOCK
+- /tmp/agent.sock to mount our ssh_agent usually exported in the host as SSH_AUTH_SOCK
