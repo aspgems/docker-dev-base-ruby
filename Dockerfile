@@ -1,3 +1,4 @@
+MAINTAINER aspgems
 FROM aspgems/ruby:2.3-slim
 
 RUN apt-get update && \
