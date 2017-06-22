@@ -1,5 +1,5 @@
-MAINTAINER aspgems
 FROM aspgems/ruby:2.3-slim
+MAINTAINER aspgems
 
 RUN apt-get update && \
   apt-get install -qq -y --no-install-recommends \
