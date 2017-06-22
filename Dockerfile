@@ -1,4 +1,4 @@
-FROM ruby:2.3-slim
+FROM aspgems/ruby:2.3-slim
 
 RUN apt-get update && \
   apt-get install -qq -y --no-install-recommends \
@@ -14,15 +14,6 @@ RUN apt-get update && \
 
 ENV LANG=C.UTF-8
 
-ENV WORKSPACE_HOME=/workspace
-
-ENV BUNDLE_PATH=$WORKSPACE_HOME/vendor/bundle
-ENV BUNDLE_BIN $BUNDLE_PATH/bin
-ENV BUNDLE_APP_CONFIG $WORKSPACE_HOME/.bundle
-ENV PATH $BUNDLE_BIN:$PATH
-WORKDIR /${WORKSPACE_HOME}
-
-# Dev environment configuration
 ENV USER_GID=1000
 ENV USER_UID=1000
 ENV USER_NAME=developer

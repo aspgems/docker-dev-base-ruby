@@ -14,5 +14,5 @@ if [ $? -ne 0 ]; then
 fi
 export SSH_PATH=$USER_HOME/.ssh
 mkdir -p $SSH_PATH && echo "StrictHostKeyChecking no" > $SSH_PATH/config
-chown -R $USER_UID:$USER_GID $USER_HOME $WORKSPACE_HOME
+chown -R $USER_UID:$USER_GID $USER_HOME $APP_HOME
 
