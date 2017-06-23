@@ -3,16 +3,9 @@ MAINTAINER aspgems
 
 RUN apt-get update && \
   apt-get install -qq -y --no-install-recommends \
-    build-essential \
-    libpq-dev \
-    nodejs \
-    tzdata \
-    libxml2-dev \
-    libxslt-dev \
     ssh \
     git \
-    vim \
-  && rm -rf /var/lib/apt/lists*
+    vim 
 
 ENV LANG=C.UTF-8
 
