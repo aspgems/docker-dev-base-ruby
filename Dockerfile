@@ -5,6 +5,7 @@ RUN apt-get update && \
   apt-get install -qq -y --no-install-recommends \
     build-essential \
     libpq-dev \
+    postgresql-client \
     nodejs \
     tzdata \
     libxml2-dev \
@@ -47,7 +48,7 @@ RUN setup_user.sh
 USER $USER_NAME
 
 # dotfiles
-ARG CASTLES=elafo/vim-dot-files,elafo/bash-dot-files,elafo/tmux-dot-files
+ARG CASTLES=elafo/vim-dot-files,elafo/bash-dot-files,elafo/tmux-dot-files,elafo/git-dot-files
 ENV CASTLES=$CASTLES
 
 USER root
